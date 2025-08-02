@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations - Book Recommendation System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-6 text-center">Recommended Books</h1>
+        <ul class="space-y-4">
+            {% for book in recommendations %}
+            <li class="border-b pb-4">
+                <h2 class="text-xl font-semibold">{{ book.title }}</h2>
+                <p class="text-gray-600">Author: {{ book.author }}</p>
+                <p class="text-gray-600">Publisher: {{ book.publisher }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="/input" class="block mt-6 text-center bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600">Try Another Recommendation</a>
+    </div>
+</body>
+</html>
